@@ -87,7 +87,8 @@ export default new Vuex.Store({
         },
         location: "South Elementary",
         address: "2101 N. Fremont St. Chicago IL 60614",
-        times: "9:30 a.m"
+        times: "9:30 a.m",
+        map: "https://goo.gl/maps/ASGKqwTzyN12"
       },
       {
         month: "September",
@@ -228,7 +229,7 @@ export default new Vuex.Store({
     location(state) {
       var loc = [];
       for (var i = 0; i < state.data.length; i++) {
-        loc.push(state.data[i].map);
+        loc.push({ map: state.data[i].map, location: state.data[i].location });
       }
       return loc;
     },

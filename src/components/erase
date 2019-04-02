@@ -1,0 +1,85 @@
+<template>
+  <div>
+    <v-content class="mx-4 mb-4">
+      <container>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor soluta magni adipisci sapiente, ipsa modi dolorem aspernatur atque aliquam! Ut, culpa! Voluptatum recusandae repellendus vero laboriosam saepe quo dolorem nulla.</p>
+        <h1>Fall Schedule</h1>
+
+
+
+<table class="table">
+          <tr>
+            <th scope="col">SEPTEMBER</th>
+            <th scope="col">Teams</th>
+            <th scope="col">Location</th>
+            <th scope="col">Address</th>
+            <th scope="col">Times</th>
+          </tr>
+
+          <tr v-for="(value, i ) in printData" :key="i">
+            <td>{{value.date}}</td>
+            <td>{{value.teams.local}} and {{ value.teams.adv}}</td>
+            <td>{{value.location}}</td>
+            <td>{{value.address}}</td>
+            <td>{{value.times}}</td>
+          </tr>
+        </table>
+        <!-- </v-data-table> -->
+
+        <table class="table">
+          <tr>
+            <th scope="col">OCTOBER</th>
+            <th scope="col">Teams</th>
+            <th scope="col">Location</th>
+            <th scope="col">Address</th>
+            <th scope="col">Times</th>
+          </tr>
+          <tr v-for="(value, i ) in printDataOct" :key="i">
+            <!-- <td>{{value.month}}</td> -->
+            <td>{{value.date}}</td>
+            <td>{{value.teams.local}} and {{ value.teams.adv}}</td>
+            <td>{{value.location}}</td>
+            <td>{{value.address}}</td>
+            <td>{{value.times}}</td>
+          </tr>
+        </table>
+
+        
+      </container>
+    </v-content>
+  </div>
+</template>
+
+
+
+
+<script>
+// @ is an alias to /src
+
+export default {
+  name: "Fall Schedule Test",
+  computed: {
+    printData() {
+      return this.$store.getters.data.filter(function(val) {
+        return val.month == "September";
+      });
+    },
+    printDataOct() {
+      return this.$store.getters.data.filter(function(val) {
+        return val.month == "October";
+      });
+    }
+    //  printData() {
+    //     return this.$store.getters.data.filter(function(month) {
+    //       return month.month == "September";
+    //     });
+    //   }
+  }
+};
+</script>
+
+
+
+
+
+

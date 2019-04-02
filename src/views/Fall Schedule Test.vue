@@ -1,75 +1,122 @@
 <template>
-  <div>
-    <v-content class="mx-4 mb-4">
-      <container>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor soluta magni adipisci sapiente, ipsa modi dolorem aspernatur atque aliquam! Ut, culpa! Voluptatum recusandae repellendus vero laboriosam saepe quo dolorem nulla.</p>
-        <h1>Fall Schedule</h1>
-        <!-- <v-data-table> -->
+  <v-data-table
+    :headers="headers"
+    :items="items"
+    class="elevation-1"
+  >
+    <template v-slot:items="props">
+      <td>{{ props.item.date }}</td>
+      <td class="text-xs-right">{{ props.item.teams }}</td>
+      <td class="text-xs-right">{{ props.item.location }}</td>
+      <td class="text-xs-right">{{ props.item.times}}</td>
 
-        <table class="table">
-          <tr>
-            <th scope="col">SEPTEMBER</th>
-            <th scope="col">Teams</th>
-            <th scope="col">Location</th>
-            <th scope="col">Address</th>
-            <th scope="col">Times</th>
-          </tr>
-
-          <tr v-for="(value, i ) in printData" :key="i">
-            <td>{{value.date}}</td>
-            <td>{{value.teams.local}} and {{ value.teams.adv}}</td>
-            <td>{{value.location}}</td>
-            <td>{{value.address}}</td>
-            <td>{{value.times}}</td>
-          </tr>
-        </table>
-        <!-- </v-data-table> -->
-
-        <table class="table">
-          <tr>
-            <th scope="col">OCTOBER</th>
-            <th scope="col">Teams</th>
-            <th scope="col">Location</th>
-            <th scope="col">Address</th>
-            <th scope="col">Times</th>
-          </tr>
-          <tr v-for="(value, i ) in printDataOct" :key="i">
-            <!-- <td>{{value.month}}</td> -->
-            <td>{{value.date}}</td>
-            <td>{{value.teams.local}} and {{ value.teams.adv}}</td>
-            <td>{{value.location}}</td>
-            <td>{{value.address}}</td>
-            <td>{{value.times}}</td>
-          </tr>
-        </table>
-      </container>
-    </v-content>
-  </div>
+    </template>
+  </v-data-table>
 </template>
 
+
 <script>
-// @ is an alias to /src
+  export default {
+    data () {
+      return {
+        headers: [
+          {
+            text: 'September',
+            align: 'left',
+            sortable: false,
+            value: 'name'
+          },
+        
+          { text: 'Date', value: 'date' },
+          { text: 'Teams', value: 'teams' },
+          { text: 'Location', value: 'location' },
+          { text: 'Times', value: 'times' },
 
-export default {
-  name: "Fall Schedule Test",
-  computed: {
-    printData() {
-      return this.$store.getters.data.filter(function(val) {
-        return val.month == "September";
-      });
-    },
-    printDataOct() {
-      return this.$store.getters.data.filter(function(val) {
-        return val.month == "October";
-      });
+        
+        ],
+        items: [
+          {
+          
+            date: 9.01,
+            teams: 'U1 VS U4',
+            location: 'AJ Katzenmaier Elementary',
+            times: 9.30,
+
+          },
+          {
+            name: 'Ice cream sandwich',
+            calories: 237,
+            fat: 9.0,
+            carbs: 37,
+            protein: 4.3,
+            iron: '1%'
+          },
+          {
+            name: 'Eclair',
+            calories: 262,
+            fat: 16.0,
+            carbs: 23,
+            protein: 6.0,
+            iron: '7%'
+          },
+          {
+            name: 'Cupcake',
+            calories: 305,
+            fat: 3.7,
+            carbs: 67,
+            protein: 4.3,
+            iron: '8%'
+          },
+          {
+            name: 'Gingerbread',
+            calories: 356,
+            fat: 16.0,
+            carbs: 49,
+            protein: 3.9,
+            iron: '16%'
+          },
+          {
+            name: 'Jelly bean',
+            calories: 375,
+            fat: 0.0,
+            carbs: 94,
+            protein: 0.0,
+            iron: '0%'
+          },
+          {
+            name: 'Lollipop',
+            calories: 392,
+            fat: 0.2,
+            carbs: 98,
+            protein: 0,
+            iron: '2%'
+          },
+          {
+            name: 'Honeycomb',
+            calories: 408,
+            fat: 3.2,
+            carbs: 87,
+            protein: 6.5,
+            iron: '45%'
+          },
+          {
+            name: 'Donut',
+            calories: 452,
+            fat: 25.0,
+            carbs: 51,
+            protein: 4.9,
+            iron: '22%'
+          },
+          {
+            name: 'KitKat',
+            calories: 518,
+            fat: 26.0,
+            carbs: 65,
+            protein: 7,
+            iron: '6%'
+          }
+        ]
+      }
     }
-    //  printData() {
-    //     return this.$store.getters.data.filter(function(month) {
-    //       return month.month == "September";
-    //     });
-    //   }
   }
-};
 </script>
-
-

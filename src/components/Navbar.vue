@@ -4,7 +4,7 @@
       <v-toolbar-side-icon class="white--text" @click="drawer= !drawer"></v-toolbar-side-icon>
       <v-toolbar-title class="text-uppercase white--text font-weight-light">game information</v-toolbar-title>
       <v-spacer></v-spacer>
-      <img src="src/assets/logo.png">
+      <img src="src/assets/net.jpg">
     </v-toolbar>
 
     <v-navigation-drawer app v-model="drawer" class="blue-grey darken-3">
@@ -18,9 +18,10 @@
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
-      <img src="src/assets/net.jpg">
+      <!--<img src="src/assets/net.jpg">-->
     </v-navigation-drawer>
   </nav>
+
 </template>
 
 
@@ -42,6 +43,4 @@ export default {
   }
 };
 </script>
-
-
 
