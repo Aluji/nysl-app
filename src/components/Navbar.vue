@@ -1,10 +1,11 @@
 <template>
   <nav>
     <v-toolbar flat app class="teal darken-3">
+  <v-icon class="white--text">keyboard_arrow_left</v-icon>
       <v-toolbar-side-icon class="white--text" @click="drawer= !drawer"></v-toolbar-side-icon>
       <v-toolbar-title class="text-uppercase white--text font-weight-light">game information</v-toolbar-title>
       <v-spacer></v-spacer>
-      <img src="src/assets/net.jpg">
+      <img src="../assets/nysl_logo.png">
     </v-toolbar>
 
     <v-navigation-drawer app v-model="drawer" class="blue-grey darken-3">
@@ -18,7 +19,8 @@
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
-      <!--<img src="src/assets/net.jpg">-->
+      <spacer></spacer>
+      <!--<img class="nav_image" src="../assets/net.jpg">-->
     </v-navigation-drawer>
   </nav>
 
@@ -44,3 +46,17 @@ export default {
 };
 </script>
 
+<style>
+
+img{
+    width:60px;
+    height: auto;
+}
+
+.nav_image{
+width:300px;
+    height: auto;
+
+}
+
+</style>

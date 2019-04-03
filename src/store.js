@@ -230,6 +230,7 @@ export default new Vuex.Store({
       var loc = [];
       for (var i = 0; i < state.data.length; i++) {
         loc.push({ map: state.data[i].map, location: state.data[i].location });
+        console.log(loc);
       }
       return loc;
     },
