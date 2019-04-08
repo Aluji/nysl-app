@@ -1,7 +1,7 @@
 <template>
   <nav>
     <v-toolbar flat app class="teal darken-3">
-  <v-icon class="white--text">keyboard_arrow_left</v-icon>
+      <v-icon class="white--text">keyboard_arrow_left</v-icon>
       <v-toolbar-side-icon class="white--text" @click="drawer= !drawer"></v-toolbar-side-icon>
       <v-toolbar-title class="text-uppercase white--text font-weight-light">game information</v-toolbar-title>
       <v-spacer></v-spacer>
@@ -23,7 +23,6 @@
       <!--<img class="nav_image" src="../assets/net.jpg">-->
     </v-navigation-drawer>
   </nav>
-
 </template>
 
 
@@ -47,16 +46,13 @@ export default {
 </script>
 
 <style>
-
-img{
-    width:60px;
-    height: auto;
+img {
+  width: 60px;
+  height: auto;
 }
 
-.nav_image{
-width:300px;
-    height: auto;
-
+.nav_image {
+  width: 300px;
+  height: auto;
 }
-
 </style>
