@@ -20,7 +20,6 @@
         </v-list-tile>
       </v-list>
       <spacer></spacer>
-      <!--<img class="nav_image" src="../assets/net.jpg">-->
     </v-navigation-drawer>
   </nav>
 </template>
@@ -56,3 +55,18 @@ img {
   height: auto;
 }
 </style>
+
+
+
+  <!-- <router-link to="/">
+          <i class="fas fa-home fa-3x"></i>
+        </router-link>
+        <router-link to="/Locations">
+          <i class="fas fa-map-marked fa-3x"></i>
+        </router-link>
+        <router-link to="/Contact">
+          <i class="fas fa-envelope fa-3x"></i> CON BOTON O
+          <v-btn depressed class="pink white--text">
+            <v-icon>email</v-icon>
+          </v-btn>
+      </router-link>-->
