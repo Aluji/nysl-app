@@ -1,40 +1,20 @@
 <template>
-  <div>
-    <table class="table1">
-      <th>September</th>
-      <th>Date</th>
-      <th>Teams</th>
-      <th>Location</th>
-      <th>Address</th>
-      <th>Time</th>
-      <tr v-for="(value, i ) in filter" :key="i" v-if="value.month == 'September' ">
-        <!-- <td>{{value.month}}</td> -->
-        <td>{{value.date}}</td>
-        <td>{{value.teams.local}} and {{ value.teams.adv}}</td>
-        <td>{{value.location}}</td>
-        <td>{{value.address}}</td>
-        <td>{{value.times}}</td>
-      </tr>
-    </table>
-
-    <table class="table2">
-      <th>October</th>
-      <th>Date</th>
-      <th>Teams</th>
-      <th>Location</th>
-      <th>Address</th>
-      <th>Time</th>
-      <tr v-for="(value, i ) in printDataOct" :key="i">
-        <!-- <td>{{value.month}}</td> -->
-        <td>{{value.date}}</td>
-        <td>{{value.teams.local}} and {{ value.teams.adv}}</td>
-        <td>{{value.location}}</td>
-        <td>{{value.address}}</td>
-        <td>{{value.times}}</td>
-      </tr>
-    </table>
-  </div>
+  <v-data-table v-bind:headers="headers" v-bind:items="filter" class="elevation-1">
+    <template slot="headerCell" scope="props">
+      <span>
+        <th>{{ props.header.text }}</th>
+      </span>
+    </template>
+    <template slot="items" scope="props">
+      <td>{{ props.item.date}}</td>
+      <td>{{ props.item.team1}}</td>
+      <td>{{ props.item.team2}}</td>
+      <td>{{ props.item.location}}</td>
+      <td>{{ props.item.time}}</td>
+    </template>
+  </v-data-table>
 </template>
+
 
 
 <script>
@@ -43,23 +23,28 @@
 export default {
   name: "Team",
   props: ["id"],
+  data: function() {
+    return {
+      headers: [
+        {
+          text: "Date",
+          align: "left",
+          sortable: false,
+          value: "date"
+        },
+        { text: "Local Team", value: "team1" },
+        { text: "Adversary Team", value: "team2" },
+        { text: "Location", value: "location" },
+        { text: "Time", value: "time" }
+      ]
+    };
+  },
   computed: {
     filter() {
-      return this.$store.getters.data.filter(match => {
-        return match.teams.local == this.id || match.teams.adv == this.id;
-      });
-    },
-    printDataOct() {
-      return this.$store.getters.data.filter(val => {
-        return (
-          val.month == "October" &&
-          (val.teams.local == this.id || val.teams.adv == this.id)
-        );
+      return this.$store.getters.items.filter(match => {
+        return match.team1 == this.id || match.team2 == this.id;
       });
     }
   }
 };
 </script>
-
-
-

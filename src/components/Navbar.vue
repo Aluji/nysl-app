@@ -8,7 +8,7 @@
       <img src="../assets/nysl_logo.png">
     </v-toolbar>
 
-    <v-navigation-drawer app v-model="drawer" class="blue-grey darken-3">
+    <v-navigation-drawer app v-model="drawer" class="indigo darken-1">
       <v-list>
         <v-list-tile v-for="link in links" :key="link.text" router :to="link.route">
           <v-list-tile-action>
@@ -31,6 +31,10 @@
 // import Layout from "./components/Layout.vue";
 
 export default {
+  created() {
+    this.$store.dispatch("getItems");
+  },
+
   data() {
     return {
       drawer: false,
