@@ -111,19 +111,16 @@ export default new Vuex.Store({
 
 
 
-  mutations: {
-    updateSearch(state, search) {
-      state.obj.search = search
-    }
-  },
+
+
 
   actions: {
     getItems({ commit }) {
 
       axios
-        .get('https://nysl-app1.firebaseio.com/team1.json')
+        .get('https://nysl-app1.firebaseio.com/.json')
         .then(results => {
-          console.log(results)
+          console.log(results.data)
           let items = results.data
           commit('SET_POSTS', items)
         })
@@ -132,16 +129,18 @@ export default new Vuex.Store({
         })
     }
   },
-
   mutations: {
     SET_POSTS(state, items) {
       state.items = items
+    },
+    updateSearch(state, search) {
+      state.obj.search = search
 
-    }
+
+
+    },
 
   },
-
-
 
   getters: {
 

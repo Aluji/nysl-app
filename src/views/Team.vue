@@ -16,7 +16,7 @@
     </v-data-table>
   </v-card>
 </template>
-
+ 
 
 
 <script>
@@ -26,9 +26,9 @@ export default {
   mounted() {
     this.$store.dispatch("getItems");
   },
-  computed: {
-    ...mapState(["items"])
-  },
+  // computed: {
+
+  // },
   name: "Team",
   props: ["id"],
   data: function() {
@@ -52,7 +52,9 @@ export default {
       return this.$store.state.items.filter(match => {
         return match.team1 == this.id || match.team2 == this.id;
       });
-    }
+    },
+
+    ...mapState(["items"])
   }
 };
 </script>
