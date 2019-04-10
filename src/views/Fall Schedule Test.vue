@@ -1,5 +1,6 @@
 <template>
   <v-card>
+    <!-- <h1 v-for="(item, index) in items" :key="index">{{team1}}</h1> -->
     <v-card-title>
       <v-spacer></v-spacer>
       <v-text-field
@@ -15,7 +16,7 @@
 
     <v-data-table
       v-bind:headers="headers"
-      v-bind:items="$store.state.items"
+      v-bind:items="items"
       v-bind:search="search"
       class="elevation-1"
     >
@@ -43,7 +44,15 @@
 
 
 <script>
+import { mapState } from "vuex";
 export default {
+  mounted() {
+    this.$store.dispatch("getItems");
+  },
+  computed: {
+    ...mapState(["items"])
+  },
+
   data: function() {
     return {
       search: "   ",
@@ -67,19 +76,25 @@ export default {
     updateSearch(e) {
       this.$store.commit("updateSearch", e.target.value);
     }
-  },
-  computed: {
-    getData() {
-      return this.$store.getters.data;
-    },
-
-    getItems() {
-      return this.store.getters.items;
-    }
-
-    // ...mapState({
-    //   search: state => state.obj.search
-    // })
   }
+
+  // computed: {
+  //   ...mapState({
+  //     search: state => state.obj.search
+  //   })
+  // }
+  // computed: {
+  //   getData() {
+  //     return this.$store.getters.data;
+  //   },
+
+  //   getItems() {
+  //     return this.store.getters.items;
+  //   },
+
+  //   ...mapState({
+  //     search: state => state.obj.search
+  //   })
+  // }
 };
 </script>

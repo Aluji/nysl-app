@@ -31,6 +31,7 @@
 // import Layout from "./components/Layout.vue";
 
 export default {
+  name: "Navbar",
   created() {
     this.$store.dispatch("getItems");
   },

@@ -108,6 +108,9 @@ export default new Vuex.Store({
     // //   { text: 'Time', value: 'time2' },
     // // ],
   },
+
+
+
   mutations: {
     updateSearch(state, search) {
       state.obj.search = search
@@ -115,17 +118,28 @@ export default new Vuex.Store({
   },
 
   actions: {
-    getItems({ }) {
+    getItems({ commit }) {
+
       axios
         .get('https://nysl-app1.firebaseio.com/team1.json')
         .then(results => {
-          console.log('results: ', results);
-          return results
+          console.log(results)
+          let items = results.data
+          commit('SET_POSTS', items)
+        })
+        .catch(error => {
+          console.log(error)
         })
     }
   },
 
+  mutations: {
+    SET_POSTS(state, items) {
+      state.items = items
 
+    }
+
+  },
 
 
 

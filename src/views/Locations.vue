@@ -6,8 +6,6 @@
         <v-btn round large class="pink white--text" v-for="(value, i ) in getLocation" :key="i">
           <a :href="value.map">{{value.location}}</a>
         </v-btn>
-
-    
       </v-layout>
     </v-container>
   </div>
@@ -23,6 +21,6 @@ export default {
         (v, i) => this.$store.getters.location.indexOf(v) === i
       );
     }
-}
+  }
 };
 </script>

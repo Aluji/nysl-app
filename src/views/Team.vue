@@ -1,26 +1,34 @@
 <template>
-  <v-data-table v-bind:headers="headers" v-bind:items="filter" class="elevation-1">
-    <template slot="headerCell" scope="props">
-      <span>
-        <th>{{ props.header.text }}</th>
-      </span>
-    </template>
-    <template slot="items" scope="props">
-      <td>{{ props.item.date}}</td>
-      <td>{{ props.item.team1}}</td>
-      <td>{{ props.item.team2}}</td>
-      <td>{{ props.item.location}}</td>
-      <td>{{ props.item.time}}</td>
-    </template>
-  </v-data-table>
+  <v-card>
+    <v-data-table v-bind:headers="headers" v-bind:items="filter" class="elevation-1">
+      <template slot="headerCell" scope="props">
+        <span>
+          <th>{{ props.header.text }}</th>
+        </span>
+      </template>
+      <template slot="items" scope="props">
+        <td>{{ props.item.date}}</td>
+        <td>{{ props.item.team1}}</td>
+        <td>{{ props.item.team2}}</td>
+        <td>{{ props.item.location}}</td>
+        <td>{{ props.item.time}}</td>
+      </template>
+    </v-data-table>
+  </v-card>
 </template>
 
 
 
 <script>
 // @ is an alias to /src
-
+import { mapState } from "vuex";
 export default {
+  mounted() {
+    this.$store.dispatch("getItems");
+  },
+  computed: {
+    ...mapState(["items"])
+  },
   name: "Team",
   props: ["id"],
   data: function() {
@@ -40,8 +48,8 @@ export default {
     };
   },
   computed: {
-    filter() {
-      return this.$store.getters.items.filter(match => {
+    filter(items) {
+      return this.$store.state.items.filter(match => {
         return match.team1 == this.id || match.team2 == this.id;
       });
     }

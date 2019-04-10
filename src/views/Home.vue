@@ -10,8 +10,10 @@
         <v-btn round large class="pink white--text" to="/Teams">Teams</v-btn>
 
         <test msg="Just a test"/>
-    
+
         <p>Additional Information: If deemed necessary by NYSL, games may be shortened or cancelled due to extreme weather conditions. Facility type: outdoor</p>
+
+        <p>hola</p>
       </v-layout>
     </v-container>
   </div>
