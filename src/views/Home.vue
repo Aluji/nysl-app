@@ -6,17 +6,17 @@
         <router-link to="/Fall Schedule Test">Fall Schedule Test</router-link>|
         </v-btn>-->
 
-        <v-btn round large class="pink white--text" to="/Fall Schedule Test">Fall Schedule Test</v-btn>
-        <v-btn round large class="pink white--text" to="/Teams">Teams</v-btn>
-
+        <v-btn
+          round
+          large
+          class="green accent-1 black--text"
+          to="/Fall Schedule Test"
+        >Fall Schedule Test</v-btn>
+        <v-btn round large class="amber accent-1 black--text" to="/Teams">Teams</v-btn>
+        <v-btn round large class="pink white--text" to="/today_matches">Today matches</v-btn>
         <test msg="Just a test"/>
 
-        <p>Additional Information: If deemed necessary by NYSL, games may be shortened or cancelled due to extreme weather conditions. Facility type: outdoor</p>
-
-        
-     
-     
-     
+        <!-- <p>Additional Information: If deemed necessary by NYSL, games may be shortened or cancelled due to extreme weather conditions. Facility type: outdoor</p> -->
       </v-layout>
     </v-container>
   </div>

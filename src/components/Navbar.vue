@@ -8,7 +8,7 @@
       <img src="../assets/nysl_logo.png">
     </v-toolbar>
 
-    <v-navigation-drawer app v-model="drawer" class="indigo darken-1">
+    <v-navigation-drawer app v-model="drawer" class="grey darken-3">
       <v-list>
         <v-list-tile v-for="link in links" :key="link.text" router :to="link.route">
           <v-list-tile-action>
@@ -51,7 +51,7 @@ export default {
 
 <style>
 img {
-  width: 60px;
+  width: 55px;
   height: auto;
 }
 

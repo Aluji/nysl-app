@@ -3,9 +3,16 @@
     <v-container>
       <h1>Game locations</h1>
       <v-layout column>
-        <v-btn round large class="pink white--text" v-for="(value, i ) in getLocation" :key="i">
-          <!-- <a :href="value.map">{{value.location}}</a> -->
-          <li>{{value}}</li>
+        <v-btn
+          round
+          large
+          class="amber accent-1 black--text"
+          v-for="(value, i ) in getLocation"
+          :key="i"
+        >
+          <!-- <a :href="value.map">{{value.location}}</a> //era un objeto y x eso funcionaba. -->
+          
+          {{value}}
         </v-btn>
       </v-layout>
     </v-container>
@@ -35,12 +42,13 @@ export default {
       let uniqueArray = new Set(array);
       console.log(uniqueArray);
       return uniqueArray;
+    },
 
-      // .map((e, i, final) => final.indexOf(e) === i && i);
-
-      // let filterArray = this.$store.state.items.filter(match => match.location);
-      // let OnlyNames = filterArray.map(
-      //   (e, i, final) => final.indexOf(e) === i && i
+    getMaps(items) {
+      let array = this.$store.state.items.map(match => match.map);
+      let uniqueArray = new Set(array);
+      console.log(uniqueArray);
+      return uniqueArray;
     }
   }
 };
