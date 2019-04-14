@@ -11,7 +11,6 @@
           :key="i"
         >
           <!-- <a :href="value.map">{{value.location}}</a> //era un objeto y x eso funcionaba. -->
-          
           {{value}}
         </v-btn>
       </v-layout>
@@ -34,7 +33,7 @@ export default {
     //   );
     // }
 
-    getLocation(items) {
+    getLocation() {
       //yo antes tenia filter. ahora, con map, tengo array de strings.
       let array = this.$store.state.items.map(match => match.location);
       console.log(array);
@@ -44,7 +43,7 @@ export default {
       return uniqueArray;
     },
 
-    getMaps(items) {
+    getMaps() {
       let array = this.$store.state.items.map(match => match.map);
       let uniqueArray = new Set(array);
       console.log(uniqueArray);

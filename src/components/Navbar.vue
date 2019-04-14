@@ -42,7 +42,8 @@ export default {
       links: [
         { icon: "home", text: "Home", route: "/" },
         { icon: "map", text: "Locations", route: "/Locations" },
-        { icon: "email", text: "Contact", route: "/Contact" }
+        { icon: "email", text: "Contact", route: "/Contact" },
+        { icon: "person", text: "Chat", route: "/login" }
       ]
     };
   }
