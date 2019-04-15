@@ -1,6 +1,5 @@
 <template>
   <v-card>
-    <!-- <h1 v-for="(item, index) in items" :key="index">{{team1}}</h1> -->
     <v-card-title>
       <v-spacer></v-spacer>
       <v-text-field

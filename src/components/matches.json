@@ -1,6 +1,6 @@
 [
     {
-        "date": "12/04",
+        "date": "9/1",
         "team1": "U1",
         "team2": "U4",
         "location": "AJ Katzenmaier Elementary",
@@ -8,7 +8,7 @@
         "map": "https://goo.gl/maps/uuCAnUMe7vy"
     },
     {
-        "date": "12/04",
+        "date": "9/1",
         "team1": "U3",
         "team2": "U2",
         "location": "Greenbay Elementary",
@@ -16,7 +16,7 @@
         "map": "https://goo.gl/maps/9BzPFU13TB82"
     },
     {
-        "date": "9/08",
+        "date": "15/8",
         "team1": "U5",
         "team2": "U6",
         "location": "Howard A Yeager Elementary",
@@ -24,7 +24,7 @@
         "map": "https://goo.gl/maps/iRJ3fn1voFF2"
     },
     {
-        "date": "9/08",
+        "date": "9/8",
         "team1": "U6",
         "team2": "U1",
         "location": "Marjorie P Hart Elementary",
@@ -72,7 +72,7 @@
         "map": "https://goo.gl/maps/9BzPFU13TB82"
     },
     {
-        "date": "10/06",
+        "date": "10/6",
         "team1": "U2",
         "team2": "U5",
         "location": "Marjorie P Hart Elementary",
@@ -80,7 +80,7 @@
         "map": "https://goo.gl/maps/AWZcMm3MNcL2"
     },
     {
-        "date": "10/06",
+        "date": "10/6",
         "team1": "U1",
         "team2": "U6",
         "location": "South Elementary",

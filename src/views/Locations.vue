@@ -1,12 +1,12 @@
 <template>
   <div class="Locations">
     <v-container>
-      <h1>Game locations</h1>
+      <!-- <h1>Game locations</h1> -->
       <v-layout column>
         <v-btn
           round
           large
-          class="amber accent-1 black--text"
+          class="green accent-4 black--text"
           v-for="(value, i ) in getLocation"
           :key="i"
         >

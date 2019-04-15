@@ -2,12 +2,12 @@
   <div>
     <v-container>
       <v-layout column>
-        <v-btn round large class="pink white--text" to="/Team/U1">U1</v-btn>
-        <v-btn round large class="pink white--text" to="/Team/U2">U2</v-btn>
-        <v-btn round large class="pink white--text" to="/Team/U3">U3</v-btn>
-        <v-btn round large class="pink white--text" to="/Team/U4">U4</v-btn>
-        <v-btn round large class="pink white--text" to="/Team/U5">U5</v-btn>
-        <v-btn round large class="pink white--text" to="/Team/U6">U6</v-btn>
+        <v-btn round large class="green lighten-2 black--text" to="/Team/U1">U1</v-btn>
+        <v-btn round large class="green lighten-2 black--text" to="/Team/U2">U2</v-btn>
+        <v-btn round large class="green lighten-2 black--text" to="/Team/U3">U3</v-btn>
+        <v-btn round large class="green lighten-2 black--text" to="/Team/U4">U4</v-btn>
+        <v-btn round large class="green lighten-2 black--text" to="/Team/U5">U5</v-btn>
+        <v-btn round large class="green lighten-2 black--text" to="/Team/U6">U6</v-btn>
 
         <!-- <li class="li" v-for="team in allteams" :key="team">{{team}}</li> -->
       </v-layout>
