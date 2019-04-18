@@ -4,21 +4,21 @@
       <Navbar/>
       <router-view></router-view>
     </v-content>
-    <footer/>
+    <footerApp/>
   </v-app>
 </template>
 
 
 <script>
 // @ is an alias to /src
-import footer from "./components/footer.vue";
+import footerApp from "./components/footerApp.vue";
 import Navbar from "./components/Navbar.vue";
 
 export default {
   name: "App",
   components: {
     Navbar,
-    footer
+    footerApp
   },
   data() {
     return {
